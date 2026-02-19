@@ -1,4 +1,7 @@
 """
+TODO: "consumer running locally - compose not working - no errors just not seing enything - if i make a error it prints 
+log the error but else , i see nothing, no prints even for the first line"
+
 Consumer - continuously listening to both redis queues 
          - fetching by priority 
          - add "insertion_time" field
