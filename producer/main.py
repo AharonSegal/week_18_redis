@@ -18,20 +18,17 @@ from priority_logic import classify
 
 config = dotenv_values(".env")
 
-ALERTS_FILE = r"data\border_alerts.json"
+ALERTS_FILE = r"border_alerts.json"
 
 QUEUE_URGENT = "urgent_queue"
 QUEUE_NORMAL = "normal_queue"
 
 
 def load_alerts(file_path):
-    # read json file and return list of alerts
+    # read json file 
     with open(file_path, "r") as f: 
         return json.load(f)
     
-    #testing
-    print("load_alerts end")
-
 
 def process_alerts():
     print("producer starting...")
@@ -52,7 +49,7 @@ def process_alerts():
         alert_r = json.dumps(alert)
 
         if priority == "URGENT":
-            # rpush(list_name, *values)
+            # rpush(list_name, *values) to the end
             r.rpush(QUEUE_URGENT, alert_r)
             urgent_count += 1
         else:
