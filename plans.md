@@ -9,8 +9,27 @@
     "visibility_quality": 0.67
   }
 
+  rout 3 range 
+  dict = {"close": 0 <x>301,
+        "medium": 301-800,
+        "far": 801-1500}
+
 
 COMPONENT PRODUDER
+
+"""
+Producer - alert insert and priority classification
+
+INPUT:
+    - json: list -> border camera alerts
+
+OUTPUT:
+    - alerts pushed to redis queues (queue_urgent / queue_normal)
+
+FLOW:
+    json file -> producer -> redis queues
+"""
+    connects only to redis
 
     load data
         set PRIORITY
