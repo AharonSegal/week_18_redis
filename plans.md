@@ -42,3 +42,6 @@ FLOW:
 
 COMPONENT REDIS
     HANDLES priority order
+
+
+in mongo group by 

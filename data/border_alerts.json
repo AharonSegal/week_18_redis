@@ -7,8 +7,8 @@
     "weapons_count": 0,
     "vehicle_type": "none",
     "distance_from_fence_m": 722,
-    "visibility_quality": 0.67
-  },
+    "visibility_quality": 0.67,
+    "priority" : "URGENT"  },
   {
     "border": "jordan",
     "zone": "zone-7",

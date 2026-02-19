@@ -39,35 +39,16 @@ services:
     networks:
       - app-network
 
-
-
-# +--------------------+
-# |   MONGO UI (WEB)   |
-# +--------------------+
-  mongo-express:
-    image: mongo-express:1.0.2
+  analytics-api:
+    build:
+      context: .
+      dockerfile: analytics-api/Dockerfile
     restart: unless-stopped
     ports:
-      - "18081:8081" 
-    environment:
-      ME_CONFIG_MONGODB_SERVER: mongo
-      ME_CONFIG_MONGODB_ENABLE_LOGIN: "false"
-      ME_CONFIG_BASICAUTH: "false"
-    depends_on:
-      - mongo
-    networks:
-      - app-network
-
-# +--------------------+
-# |     REDIS UI       |
-# +--------------------+
-  redisinsight:
-    image: redis/redisinsight:latest
-    restart: unless-stopped
-    ports:
-      - "5540:5540" 
+      - "8000:8000"
     depends_on:
       - redis
+      - mongo
     networks:
       - app-network
 
