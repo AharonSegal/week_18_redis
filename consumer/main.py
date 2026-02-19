@@ -13,6 +13,7 @@ OUTPUT:
 FLOW:
     alert from redis -> add "insertion_time" field -> saves to mongo
 """
+print("===========CONSUMER STARTING head ========================")
 
 import json
 import time
@@ -24,6 +25,8 @@ QUEUE_URGENT = "queue_urgent"
 QUEUE_NORMAL = "queue_normal"
 
 collection = mongo.collection("alerts")
+
+print("===========CONSUMER STARTING========================")
 
 
 def process():

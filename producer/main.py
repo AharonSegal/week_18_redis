@@ -9,6 +9,10 @@ OUTPUT:
 
 FLOW:
     json file -> producer -> redis queues
+
+NOTE: in the compose
+        restart: "no"
+        so that the code runs once
 """
 
 import json

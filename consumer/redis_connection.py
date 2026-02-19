@@ -3,7 +3,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values(".env")
 
-REDIS_HOST = config.get("REDIS_HOST", "127.0.0.1")
+REDIS_HOST = config.get("REDIS_HOST", "redis")
 REDIS_PORT = int(config.get("REDIS_PORT", "6379"))
 
 

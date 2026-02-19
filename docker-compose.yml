@@ -21,9 +21,21 @@ services:
     build:
       context: .
       dockerfile: producer/Dockerfile
+    # so it only loads once
     restart: "no"
     depends_on:
       - redis
+    networks:
+      - app-network
+
+  consumer:
+    build:
+      context: .
+      dockerfile: consumer/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - redis
+      - mongo
     networks:
       - app-network
 
